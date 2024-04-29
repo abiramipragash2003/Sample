@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first page</title>
+    <!-- only for css,rel says the type of document -->
+    <link href="style.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- js file add -->
+    <script src="script.js" rel="js"></script>
+
+</head>
+
+<body>
+
+    <h1 align="center">Academics-HTML</h1>
+    <!-- navigation -->
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist"
+        style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab"
+                aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab"
+                aria-selected="false">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab"
+                aria-selected="false">Contact</button>
+        </li>
+    </ul>
+
+    <!-- DOM Manipulation button -->
+    <p id="p1" class="content1" style="font-size:30px" align="center"><b><u>Introduction</u></b></p><br>
+    <button onclick="action()" style="margin-left: 50%;">abiiii</button><br>
+
+    <img src="img.jfif" alt="intro html" height="100" width="500" style="margin-top: 50px;">
+    <p style="font-size:20px">[1] &lt!DOCTYPE html &gt declaration defines that this document is an HTML5 document<br>
+    </p>
+    <p style="color:darkblue"><b>Here is an structure</b></p>
+    <img src="basic-structure.png" alt="basic-structure of html" height="300" width="300">
+    <!-- Function call  -->
+    <p id="p2" onclick="para()">In CSS, a container is a term commonly used to refer to an element that wraps
+        and contains other elements within a web page or a specific section of
+        a web page. It is typically used for layout and organization purposes.
+        Containers help group related elements together and provide structure to the content.</p>
+
+
+    <h2><u>User Profile Registration</u></h2>
+    <form action="" class="form-control" id="loginform">
+        <fieldset>
+            <legend>User Profile Registration form</legend>
+            <label>Enter name</label>
+            <input type="text" name="name" id="name" value="abi"><br>
+            <label>Enter password</label>
+            <input type="password" name="password" id="password"><br> 
+            <label>select gender</label><br>
+            <input type="radio" name="gender">male<br>
+            <input type="radio" name="gender">female<br>
+            <label>enter age</label><br>
+            <input type="number" name="age" id="age"><br>
+            <label>enter state</label><br>
+            <select name="state">
+                <option>tamilnadu</option>
+                <option>kerala</option>
+                <option>andhra</option>
+                <option>gujarat</option>
+                <option>rajasthan</option>
+            </select><br>
+            <lable>Qualification</lable><br>
+            <input type="checkbox" name="q">SSLC<br>
+            <input type="checkbox" name="q">HSC<br>
+            <input type="checkbox" name="q">UG<br>
+            <input type="checkbox" name="q">PG<br>
+            <label>address</label>
+            <textarea cols="10" rows="5" name="address"></textarea><br>
+            <input type="submit" value="submit">
+            <!-- <input type="reset"> -->
+        </fieldset>
+    </form>
+    <script>
+        let loginForm = document.getElementById("loginform");
+        loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+    
+  let username = document.getElementById("name");
+  let password = document.getElementById("password");
+    
+  if (username.value == "" || password.value == "") {
+    alert("Ensure you input a value in both fields!");
+  } else {
+    // perform operation with form input
+    alert("This form has been successfully submitted!");
+    console.log(
+      `This form has a username of ${username.value} and password of ${password.value}`
+    );
+    
+    username.value = "";
+    password.value = "";
+  }
+});
+    
+    </script>
+    <!-- Range using bootstrap -->
+    <label for="customRange1" class="form-label">Example range</label>
+    <input type="range" class="form-range" id="customRange1">
+
+
+
+    <!-- bootstrap button model -->
+    <div class="vstack gap-2 col-md-5 mx-auto">
+        <button type="button" class="btn btn-secondary">Save changes</button>
+        <button type="button" class="btn btn-outline-secondary">Cancel</button>
+    </div>
+    <!-- Dom manipulation button -->
+    <button style="margin-left: 90px;margin-top: 50px;" onclick="newAction()">new button</button>
+    <script>
+        // DOM TREE MANIPULATION
+        var y = document.body.children;
+        console.log(y[1]);
+        var x = document.body.removeChild(y[1]);
+        console.log(x);
+        console.log(y[1]);//NEXT CHILD NODE WILL BE SHOWN AS FIRST ONE IS DELETED
+        console.log(y[1].getAttribute('align'));
+        //WHEN WE CLICK BUTTON abii,THE FOLLOWING ACTION METHOD WILL BE CALLED
+        function action() 
+        {
+            var x = document.getElementById("p1");
+            x.innerHTML = "Muneesh";
+            x.style.backgroundColor = "green";
+            x.style.color = "black";
+        }
+        function newAction() 
+        {
+            var x = document.getElementById("p2");
+            x.innerHTML = "Iam new paragraph arrived due to newAction method using DOM tree manipulation created by abi";
+            x.style.backgroundColor = "green";
+            x.style.color = "black";
+        }
+       
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+h1{
+    font-size:;
+    border-style:dotted;
+    border-color:;
+    color:rgb(214, 153, 182);
+    margin-top: 100px;
+    padding: 50px;
+    font-style:oblique;
+
+
+}
+
+p{
+    color:deeppink;
+}
+/* #p1{
+    color:aquamarine;
+} */
+.content1
+{
+    color:darkolivegreen;
+}
